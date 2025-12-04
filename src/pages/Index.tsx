@@ -76,7 +76,7 @@ export default function Index() {
         <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <Icon name="Zap" className="text-primary" size={32} />
-            <h1 className="text-2xl font-black text-glow text-primary">PARTY TIME</h1>
+            <h1 className="text-2xl font-black text-glow text-primary">111 LOCAL EVENTS</h1>
           </div>
           
           <div className="hidden md:flex gap-6">
@@ -114,10 +114,10 @@ export default function Index() {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h1 className="text-5xl md:text-7xl font-black text-glow">
-                ТВОЯ ВЕЧЕРИНКА
+                111 LOCAL EVENTS
                 <br />
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  НАЧИНАЕТСЯ ЗДЕСЬ
+                  ТВОЯ ВЕЧЕРИНКА ЗДЕСЬ
                 </span>
               </h1>
               <p className="text-xl md:text-2xl text-muted-foreground">
@@ -225,7 +225,7 @@ export default function Index() {
               <Card className="border-2">
                 <CardContent className="pt-6 space-y-6 text-lg">
                   <p>
-                    <span className="text-primary font-bold text-2xl">PARTY TIME</span> — это твой путеводитель 
+                    <span className="text-primary font-bold text-2xl">111 LOCAL EVENTS</span> — это твой путеводитель 
                     в мире лучших вечеринок города. Мы собираем самые яркие события, чтобы твоя жизнь была 
                     наполнена музыкой, танцами и незабываемыми эмоциями.
                   </p>
@@ -346,7 +346,7 @@ export default function Index() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-2">
               <Icon name="Zap" className="text-primary" size={32} />
-              <span className="text-2xl font-black text-primary">PARTY TIME</span>
+              <span className="text-2xl font-black text-primary">111 LOCAL EVENTS</span>
             </div>
             
             <div className="flex gap-6">
@@ -362,7 +362,7 @@ export default function Index() {
             </div>
             
             <div className="text-muted-foreground text-center">
-              © 2024 PARTY TIME. Все права защищены.
+              © 2024 111 LOCAL EVENTS. Все права защищены.
             </div>
           </div>
         </div>
