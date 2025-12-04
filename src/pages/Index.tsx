@@ -100,7 +100,10 @@ export default function Index() {
             </button>
           </div>
 
-          <Button className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold">
+          <Button 
+            className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold"
+            onClick={() => window.open('https://t.me/local_event111', '_blank')}
+          >
             <Icon name="Send" size={16} className="mr-2" />
             Наш канал
           </Button>
@@ -273,6 +276,7 @@ export default function Index() {
                   <Button 
                     size="lg"
                     className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold text-lg"
+                    onClick={() => window.open('https://t.me/local_event111', '_blank')}
                   >
                     <Icon name="MessageCircle" size={20} className="mr-2" />
                     Перейти в канал
