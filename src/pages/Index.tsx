@@ -222,11 +222,11 @@ export default function Index() {
           <section className="py-16 container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <div className="flex flex-col items-center justify-center space-y-8 animate-fade-up">
-                <div className="relative w-full max-w-md aspect-square logo-rotate">
+                <div className="relative w-full max-w-md aspect-square">
                   <img 
-                    src="https://cdn.poehali.dev/projects/57fa6d59-929a-41e8-8f2c-bb7385799082/files/ae61522b-5abe-4a15-867b-c48e04278d42.jpg"
+                    src="https://cdn.poehali.dev/projects/57fa6d59-929a-41e8-8f2c-bb7385799082/files/128f77a7-b222-462c-9ce7-6562c0b32acf.jpg"
                     alt="111 LOCAL EVENTS Logo"
-                    className="w-full h-full object-contain animate-glow-pulse"
+                    className="w-full h-full object-contain logo-rotate"
                   />
                 </div>
                 <div className="text-center space-y-4">
