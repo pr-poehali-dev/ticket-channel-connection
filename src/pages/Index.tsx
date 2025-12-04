@@ -165,21 +165,21 @@ export default function Index() {
 
       <main>
         <section className="relative overflow-hidden py-20 md:py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-glow-pulse" />
           
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-4xl mx-auto text-center space-y-6">
-              <h1 className="text-5xl md:text-7xl font-black text-glow">
+              <h1 className="text-5xl md:text-7xl font-black text-glow animate-fade-up">
                 111 LOCAL EVENTS
                 <br />
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                   ТВОЯ ВЕЧЕРИНКА ЗДЕСЬ
                 </span>
               </h1>
-              <p className="text-xl md:text-2xl text-muted-foreground">
+              <p className="text-xl md:text-2xl text-muted-foreground animate-fade-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
                 Самые яркие события города. Купи билет в один клик
               </p>
-              <div className="flex flex-wrap gap-4 justify-center">
+              <div className="flex flex-wrap gap-4 justify-center animate-fade-up" style={{ animationDelay: '0.4s', opacity: 0 }}>
                 <Button 
                   size="lg" 
                   className="bg-primary hover:bg-primary/90 font-bold text-lg px-8"
@@ -205,7 +205,7 @@ export default function Index() {
         {activeSection === 'events' && (
           <section className="py-16 container mx-auto px-4">
             <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-black mb-4">
+              <h2 className="text-4xl md:text-5xl font-black mb-4 animate-fade-up">
                 БЛИЖАЙШИЕ СОБЫТИЯ
               </h2>
               <p className="text-muted-foreground text-lg">
@@ -214,10 +214,11 @@ export default function Index() {
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {events.map((event) => (
+              {events.map((event, index) => (
                 <Card 
                   key={event.id} 
-                  className="overflow-hidden border-2 hover:card-glow transition-all duration-300 hover:-translate-y-2"
+                  className="overflow-hidden border-2 hover:card-glow transition-all duration-300 hover:-translate-y-2 animate-fade-up opacity-0"
+                  style={{ animationDelay: `${index * 0.15}s` }}
                 >
                   <div className="aspect-video bg-gradient-to-br from-primary/40 to-secondary/40 relative overflow-hidden">
                     <div className="absolute inset-0 flex items-center justify-center">
