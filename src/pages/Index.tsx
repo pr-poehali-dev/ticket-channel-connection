@@ -57,6 +57,7 @@ const events: Event[] = [
 export default function Index() {
   const [email, setEmail] = useState('');
   const [activeSection, setActiveSection] = useState('events');
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -100,14 +101,66 @@ export default function Index() {
             </button>
           </div>
 
-          <Button 
-            className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold"
-            onClick={() => window.open('https://t.me/local_event111', '_blank')}
-          >
-            <Icon name="Send" size={16} className="mr-2" />
-            Наш канал
-          </Button>
+          <div className="flex items-center gap-3">
+            <Button 
+              className="hidden md:flex bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold"
+              onClick={() => window.open('https://t.me/local_event111', '_blank')}
+            >
+              <Icon name="Send" size={16} className="mr-2" />
+              Наш канал
+            </Button>
+
+            <Button
+              variant="ghost"
+              size="icon"
+              className="md:hidden"
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            >
+              <Icon name={mobileMenuOpen ? 'X' : 'Menu'} size={24} />
+            </Button>
+          </div>
         </nav>
+
+        {mobileMenuOpen && (
+          <div className="md:hidden border-b border-border bg-background/95 backdrop-blur-lg">
+            <div className="container mx-auto px-4 py-4 space-y-3">
+              <button 
+                onClick={() => {
+                  setActiveSection('events');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 px-4 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors font-semibold"
+              >
+                Мероприятия
+              </button>
+              <button 
+                onClick={() => {
+                  setActiveSection('about');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 px-4 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors font-semibold"
+              >
+                О нас
+              </button>
+              <button 
+                onClick={() => {
+                  setActiveSection('contacts');
+                  setMobileMenuOpen(false);
+                }}
+                className="block w-full text-left py-3 px-4 rounded-lg text-foreground hover:bg-primary/10 hover:text-primary transition-colors font-semibold"
+              >
+                Контакты
+              </button>
+              <Button 
+                className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold"
+                onClick={() => window.open('https://t.me/local_event111', '_blank')}
+              >
+                <Icon name="Send" size={16} className="mr-2" />
+                Наш канал
+              </Button>
+            </div>
+          </div>
+        )}
       </header>
 
       <main>
