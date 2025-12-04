@@ -314,11 +314,30 @@ export default function Index() {
         {activeSection === 'contacts' && (
           <section className="py-16 container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center space-y-8">
-              <h2 className="text-4xl md:text-5xl font-black">
+              <h2 className="text-4xl md:text-5xl font-black animate-fade-up">
                 СВЯЖИСЬ С НАМИ
               </h2>
               
-              <Card className="border-2">
+              <div className="relative py-8 animate-fade-up" style={{ animationDelay: '0.2s', opacity: 0 }}>
+                <div className="stars">
+                  {[...Array(15)].map((_, i) => (
+                    <div
+                      key={i}
+                      className="star"
+                      style={{
+                        top: `${Math.random() * 100}%`,
+                        left: `${Math.random() * 100}%`,
+                        animationDelay: `${Math.random() * 3}s`
+                      }}
+                    />
+                  ))}
+                </div>
+                <div className="flex justify-center">
+                  <div className="planet" />
+                </div>
+              </div>
+              
+              <Card className="border-2 animate-fade-up" style={{ animationDelay: '0.4s', opacity: 0 }}>
                 <CardContent className="pt-6 space-y-6">
                   <div className="flex items-center gap-4 p-4 bg-muted rounded-lg">
                     <Icon name="Send" size={32} className="text-primary" />
