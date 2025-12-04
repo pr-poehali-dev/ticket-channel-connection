@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -58,6 +58,16 @@ export default function Index() {
   const [email, setEmail] = useState('');
   const [activeSection, setActiveSection] = useState('events');
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
@@ -165,9 +175,15 @@ export default function Index() {
 
       <main>
         <section className="relative overflow-hidden py-20 md:py-32">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-glow-pulse" />
+          <div 
+            className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/20 to-accent/20 blur-3xl animate-glow-pulse" 
+            style={{ transform: `translateY(${scrollY * 0.5}px)` }}
+          />
           
-          <div className="container mx-auto px-4 relative z-10">
+          <div 
+            className="container mx-auto px-4 relative z-10"
+            style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+          >
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <h1 className="text-5xl md:text-7xl font-black text-glow animate-fade-up">
                 111 LOCAL EVENTS
@@ -220,8 +236,14 @@ export default function Index() {
                   className="overflow-hidden border-2 hover:card-glow transition-all duration-300 hover:-translate-y-2 animate-fade-up opacity-0"
                   style={{ animationDelay: `${index * 0.15}s` }}
                 >
-                  <div className="aspect-video bg-gradient-to-br from-primary/40 to-secondary/40 relative overflow-hidden">
-                    <div className="absolute inset-0 flex items-center justify-center">
+                  <div 
+                    className="aspect-video bg-gradient-to-br from-primary/40 to-secondary/40 relative overflow-hidden"
+                    style={{ transform: `scale(${1 + scrollY * 0.0001})` }}
+                  >
+                    <div 
+                      className="absolute inset-0 flex items-center justify-center"
+                      style={{ transform: `rotate(${scrollY * 0.05}deg)` }}
+                    >
                       <Icon name="Music" size={64} className="text-white/30" />
                     </div>
                     <Badge className="absolute top-4 right-4 bg-accent font-bold">
