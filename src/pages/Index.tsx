@@ -66,8 +66,8 @@ export default function Index() {
     }
   };
 
-  const handleBuyTicket = (eventTitle: string) => {
-    toast.success(`Билет на "${eventTitle}" добавлен в корзину! 🎫`);
+  const handleBuyTicket = () => {
+    window.open('https://rbmnsk.qtickets.ru', '_blank');
   };
 
   return (
@@ -207,7 +207,7 @@ export default function Index() {
                   <CardFooter>
                     <Button 
                       className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 font-bold text-lg"
-                      onClick={() => handleBuyTicket(event.title)}
+                      onClick={handleBuyTicket}
                     >
                       <Icon name="ShoppingCart" size={18} className="mr-2" />
                       Купить билет
