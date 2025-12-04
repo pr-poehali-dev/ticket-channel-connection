@@ -192,6 +192,7 @@ export default function Index() {
                   size="lg" 
                   variant="outline" 
                   className="border-2 font-bold text-lg px-8"
+                  onClick={() => window.open('https://rbmnsk.qtickets.ru', '_blank')}
                 >
                   <Icon name="Calendar" size={20} className="mr-2" />
                   Афиша
