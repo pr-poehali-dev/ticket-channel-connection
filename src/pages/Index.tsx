@@ -220,78 +220,32 @@ export default function Index() {
 
         {activeSection === 'events' && (
           <section className="py-16 container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl md:text-5xl font-black mb-4 animate-fade-up">
-                БЛИЖАЙШИЕ СОБЫТИЯ
-              </h2>
-              <p className="text-muted-foreground text-lg">
-                Выбирай и покупай билеты прямо сейчас
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {events.map((event, index) => (
-                <Card 
-                  key={event.id} 
-                  className="overflow-hidden border-2 hover:card-glow transition-all duration-300 hover:-translate-y-2 animate-fade-up opacity-0"
-                  style={{ animationDelay: `${index * 0.15}s` }}
-                >
-                  <div 
-                    className="aspect-video bg-gradient-to-br from-primary/40 to-secondary/40 relative overflow-hidden"
-                    style={{ transform: `scale(${1 + scrollY * 0.0001})` }}
+            <div className="max-w-4xl mx-auto">
+              <div className="flex flex-col items-center justify-center space-y-8 animate-fade-up">
+                <div className="relative w-full max-w-md aspect-square">
+                  <img 
+                    src="https://cdn.poehali.dev/projects/57fa6d59-929a-41e8-8f2c-bb7385799082/files/ae61522b-5abe-4a15-867b-c48e04278d42.jpg"
+                    alt="111 LOCAL EVENTS Logo"
+                    className="w-full h-full object-contain animate-glow-pulse"
+                  />
+                </div>
+                <div className="text-center space-y-4">
+                  <h2 className="text-4xl md:text-5xl font-black">
+                    111 LOCAL EVENTS
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Твоя вечеринка начинается здесь
+                  </p>
+                  <Button 
+                    size="lg"
+                    className="bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 font-bold text-lg px-8 mt-6"
+                    onClick={handleBuyTicket}
                   >
-                    <div 
-                      className="absolute inset-0 flex items-center justify-center"
-                      style={{ transform: `rotate(${scrollY * 0.05}deg)` }}
-                    >
-                      <Icon name="Music" size={64} className="text-white/30" />
-                    </div>
-                    <Badge className="absolute top-4 right-4 bg-accent font-bold">
-                      {event.category}
-                    </Badge>
-                  </div>
-                  
-                  <CardHeader>
-                    <CardTitle className="text-2xl font-black">{event.title}</CardTitle>
-                    <CardDescription className="text-base">
-                      {event.description}
-                    </CardDescription>
-                  </CardHeader>
-                  
-                  <CardContent className="space-y-3">
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Icon name="Calendar" size={18} className="text-primary" />
-                      <span className="font-semibold">{event.date}</span>
-                      <span className="text-muted-foreground">•</span>
-                      <Icon name="Clock" size={18} className="text-primary" />
-                      <span className="font-semibold">{event.time}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-foreground">
-                      <Icon name="MapPin" size={18} className="text-secondary" />
-                      <span className="font-semibold">{event.location}</span>
-                    </div>
-                    <div className="flex items-center justify-between pt-2">
-                      <div className="text-3xl font-black text-primary">
-                        {event.price}₽
-                      </div>
-                      <Badge variant="outline" className="text-muted-foreground">
-                        <Icon name="Users" size={14} className="mr-1" />
-                        Осталось мало
-                      </Badge>
-                    </div>
-                  </CardContent>
-                  
-                  <CardFooter>
-                    <Button 
-                      className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90 font-bold text-lg"
-                      onClick={handleBuyTicket}
-                    >
-                      <Icon name="ShoppingCart" size={18} className="mr-2" />
-                      Купить билет
-                    </Button>
-                  </CardFooter>
-                </Card>
-              ))}
+                    <Icon name="Ticket" size={20} className="mr-2" />
+                    Купить билеты
+                  </Button>
+                </div>
+              </div>
             </div>
           </section>
         )}
